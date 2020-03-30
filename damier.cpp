@@ -1,4 +1,8 @@
 #include "damier.h"
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+using namespace std;
 
 damier::damier(int l)
 {
@@ -42,6 +46,7 @@ void damier::free(){
 }
 
 void damier::random(){
+
     //On compte le nombre de zéros
     int nbz=0; //Nombre de zéros sur la grille
     for (int i=0; i<L; i++) {
@@ -54,7 +59,8 @@ void damier::random(){
     }
 
     //On choisit ensuite une case à zéro qui recevra un deux ou un quatre
-    int v1 = rand() % nbz;
+
+    int v1 = rand() %  nbz;
 
     //On choisit ensuite si le chiffre sera un deux ou un quatre
     //On a assigné 20% de chance pour que ça soit un 4
@@ -78,6 +84,7 @@ void damier::random(){
             }
             if (compteur-1==v1){
                 T[i][j]=valeur;
+                compteur=L^2+10;
             }
         }
 
